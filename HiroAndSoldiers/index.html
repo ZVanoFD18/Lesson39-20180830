@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lesson39-20180830</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/app.css">
+	<script type="text/javascript" src="js/Hiro.js"></script>
+	<script type="text/javascript" src="js/Soldier.js"></script>
+	<script type="text/javascript" src="js/App.js"></script>
+</head>
+<body>
+<pre>
+	В некой игре-стратегии есть солдаты и герои.
+
+	У солдат есть метод «идти за героем», который в качестве аргумента принимает объект типа «герой».
+	У героев есть метод «увеличения собственного уровня».
+
+	В основной ветке программы создается по одному герою для каждой команды.
+
+	В цикле генерируются солдаты. Их количество и принадлежность к команде определяется случайно.
+
+	У героев есть метод расчет индекса силы который считается по формуле:
+	индекс_силы = количество_солдат*уровень_героя
+
+	У героев есть метод «нападение» который принимает объект другого героя.
+	Герой у которого больше индекс силы – побеждает, ему повышается уровень на одну единицу.
+
+	Реализуйте интерфейс для пользователя.
+</pre>
+<div class="gui">
+	<button id='btnSelectHiro1' type="button" name="button">Выбрать героя 1</button>
+	<button id='btnSelectHiro2' type="button" name="button">Выбрать героя 2</button>
+	<button id='btnDoBattle' type="button" name="button">Битва</button>
+</div>
+<div class="battlefield">
+	<div id="hiro1" class="hiro">
+		<p class='hiro-name'>
+			<span class="hiro-label hiro-name-label">Имя:</span>
+			<span class="hiro-value hiro-name-value">value</span>
+		</p>
+		<p class='hiro-level'>
+			<span class="hiro-label hiro-level-label">Уровень:</span>
+			<span class="hiro-value hiro-level-value">value</span>
+		</p>
+		<p class='hiro-power'>
+			<span class="hiro-label hiro-power-label">Сила:</span>
+			<span class="hiro-value hiro-power-value">value</span>
+		</p>
+		<p class='hiro-battles'>
+			<span class="hiro-label hiro-battles-label">Битв:</span>
+			<span class="hiro-value hiro-battles-value">value</span>
+		</p>
+		<p class='hiro-soldiers'>
+			<span class="hiro-label hiro-soldiers-label">Солдат:</span>
+			<span class="hiro-value hiro-soldiers-value">value</span>
+		</p>
+	</div>
+	<div id="hiro2" class="hiro">
+		<p class='hiro-name'>
+			<span class="hiro-label hiro-name-label">Имя:</span>
+			<span class="hiro-value hiro-name-value">value</span>
+		</p>
+		<p class='hiro-level'>
+			<span class="hiro-label hiro-level-label">Уровень:</span>
+			<span class="hiro-value hiro-level-value">value</span>
+		</p>
+		<p class='hiro-power'>
+			<span class="hiro-label hiro-power-label">Сила:</span>
+			<span class="hiro-value hiro-power-value">value</span>
+		</p>
+		<p class='hiro-battles'>
+			<span class="hiro-label hiro-battles-label">Битв:</span>
+			<span class="hiro-value hiro-battles-value">value</span>
+		</p>
+		<p class='hiro-soldiers'>
+			<span class="hiro-label hiro-soldiers-label">Солдат:</span>
+			<span class="hiro-value hiro-soldiers-value">value</span>
+		</p>
+	</div>
+</div>
+</body>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		let arrHiroName = [
+			'Вася',
+			'Петя',
+			'Галя',
+			'Поля',
+			'Ира',
+			'Нина',
+			'Саша',
+			'Сергей'
+		]
+		app.init(arrHiroName);
+	})
+	let app = new App();
+</script>
+</html>
